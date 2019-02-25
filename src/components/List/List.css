@@ -1,0 +1,22 @@
+.List {
+    background: darkgoldenrod;
+    padding: 20px 5px;
+    color: darkblue;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 600px;
+    overflow-y: scroll;
+}
+
+.country {
+    margin: 5px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+}
+
+.country:hover {
+    font-size: 30px;
+    color: white;
+}
