@@ -1,0 +1,28 @@
+.Country {
+    display: inline-block;
+    padding: 20px;
+    color: darkslategrey;
+    width: 65%;
+    height: 600px;
+    background: orange;
+    overflow-y: scroll;
+}
+
+.Country p {
+    font-size: 24px;
+}
+
+.Country h2 {
+    color: darkred;
+}
+
+.Country ul {
+    padding: 10px;
+    font-size: 16px;
+    float: right;
+}
+
+.Country li {
+    padding-top: 10px;
+    cursor: pointer;
+}
