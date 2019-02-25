@@ -17,6 +17,7 @@
 }
 
 .Country ul {
+    width: 200px;
     padding: 10px;
     font-size: 16px;
     float: right;
@@ -25,4 +26,9 @@
 .Country li {
     padding-top: 10px;
     cursor: pointer;
+}
+
+.Country li:hover {
+    font-weight: bold;
+
 }

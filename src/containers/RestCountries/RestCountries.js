@@ -14,7 +14,7 @@ class RestCountries extends Component {
     };
 
     getAll = () => {
-        axios.get('https://restcountries.eu/rest/v2/all').then(response => {
+        axios.get('all').then(response => {
             const requests = response.data.map(country => {
                 return {
                     key: country.alpha3Code,
@@ -26,25 +26,17 @@ class RestCountries extends Component {
             .catch(error => {console.log(error);});
     };
 
-    getName = (code) => {
-        axios.get('https://restcountries.eu/rest/v2/alpha/' + code).then(response => {
-            let name = response.data.name;
-            return [name, code];})
-            .then(bord => {console.log(bord)})
-            .then(error => {console.log(error);});
-    };
-
     getInfo = (code) => {
-        axios.get('https://restcountries.eu/rest/v2/alpha/' + code).then(response => {
+        axios.get('alpha/' + code).then(response => {
             const borders = response.data.borders.map(element => {
-                return axios.get('https://restcountries.eu/rest/v2/alpha/' + element).then(response => {
+                return axios.get('alpha/' + element).then(response => {
                     return response.data;
                 });
             });
             return Promise.all(borders)
-                .then(qwe => this.setState({
+                .then(neighbour => this.setState({
                     selectedCountry: response.data,
-                    borders: [...qwe]
+                    borders: [...neighbour]
                 }));
         })
     };
